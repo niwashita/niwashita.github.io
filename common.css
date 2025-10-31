@@ -1,0 +1,252 @@
+/* ===================================
+   CSS Variables（カラー・フォント・余白）
+   =================================== */
+:root {
+  /* Color */
+  --color-bg: #FAFAFA;
+  --color-white: #FFFFFF;
+  --color-text: #2C2C2C;
+  --color-text-light: #6B6B6B;
+  --color-text-lighter: #999999;
+  --color-primary: #4A9B9B;
+  --color-primary-light: #6BB4B4;
+  --color-primary-dark: #3A7A7A;
+  --color-secondary: #E8E8E8;
+  --color-secondary-dark: #D0D0D0;
+  --color-error: #D85858;
+  
+  /* Font */
+  --font-en: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-ja: 'Noto Sans JP', 'Yu Gothic', 'Hiragino Sans', sans-serif;
+  
+  /* Font Size */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3rem;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+  
+  /* Container */
+  --container-xl: 1200px;
+  
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  /* Section Padding */
+  --section-padding: var(--space-3xl);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --text-3xl: 2.25rem;
+    --text-4xl: 3rem;
+    --text-5xl: 3.5rem;
+    --section-padding: var(--space-4xl);
+  }
+}
+
+/* ===================================
+   Base
+   =================================== */
+body {
+  font-family: var(--font-ja);
+  font-size: var(--text-base);
+  line-height: 1.75;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* ===================================
+   Container
+   =================================== */
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* ===================================
+   Section
+   =================================== */
+.section {
+  padding: var(--section-padding) 0;
+}
+
+/* 背景色を交互に */
+.section:nth-child(even) {
+  background-color: var(--color-white);
+}
+
+.section:nth-child(odd) {
+  background-color: var(--color-bg);
+}
+
+/* セクションタイトル */
+.section__title {
+  font-family: var(--font-en);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  letter-spacing: 0.02em;
+}
+
+.section__lead {
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.8;
+}
+
+/* ===================================
+   Button
+   =================================== */
+.button {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-en);
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.button--primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 155, 155, 0.3);
+}
+
+.button--secondary {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-secondary-dark);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+/* ===================================
+   Header
+   =================================== */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-secondary);
+  z-index: 100;
+}
+
+.header__inner {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo a {
+  font-family: var(--font-en);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+}
+
+.header__nav ul {
+  display: flex;
+  gap: var(--space-xl);
+  list-style: none;
+}
+
+.header__nav a {
+  font-family: var(--font-en);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-light);
+  position: relative;
+}
+
+.header__nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.header__nav a:hover {
+  color: var(--color-text);
+}
+
+.header__nav a:hover::after {
+  width: 100%;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+.footer {
+  background-color: var(--color-text);
+  color: var(--color-white);
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: var(--text-sm);
+  color: var(--color-text-lighter);
+}
+
+.footer__nav {
+  margin-top: var(--space-md);
+}
+
+.footer__nav a {
+  color: var(--color-text-lighter);
+  font-size: var(--text-sm);
+}
+
+.footer__nav a:hover {
+  color: var(--color-white);
+}
