@@ -1,0 +1,531 @@
+/* ===================================
+   Hero Section
+   =================================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  text-align: center;
+  padding: var(--space-4xl) var(--space-lg);
+}
+
+.hero__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero__subtitle {
+  font-family: var(--font-en);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.hero__title {
+  font-family: var(--font-ja);
+  font-size: var(--text-4xl);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: var(--text-5xl);
+  }
+}
+
+.hero__text {
+  font-size: var(--text-lg);
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-bottom: var(--space-2xl);
+}
+
+.hero__buttons {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===================================
+   About Section
+   =================================== */
+.about__content {
+  max-width: 800px;
+  margin: 0 auto var(--space-3xl);
+  text-align: center;
+}
+
+.about__name {
+  font-family: var(--font-en);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+}
+
+.about__role {
+  font-family: var(--font-en);
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-xl);
+  letter-spacing: 0.05em;
+}
+
+.about__description p {
+  margin-bottom: var(--space-md);
+}
+
+.about__description p:last-child {
+  margin-bottom: 0;
+}
+
+/* スキルセット */
+.about__skills {
+  margin: var(--space-4xl) 0;
+}
+
+.about__skills h3 {
+  font-family: var(--font-en);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.skills__grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.skill {
+  background-color: var(--color-white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-secondary);
+  transition: all 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: var(--color-primary-light);
+}
+
+.skill h4 {
+  font-family: var(--font-en);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+}
+
+.skill ul {
+  list-style: none;
+}
+
+.skill li {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-xs);
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.skill li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+.skill li:last-child {
+  margin-bottom: 0;
+}
+
+/* 経歴 */
+.about__career {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about__career h3 {
+  font-family: var(--font-en);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.about__career dl {
+  background-color: var(--color-white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-secondary);
+}
+
+.about__career dt {
+  font-family: var(--font-en);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+  margin-top: var(--space-lg);
+}
+
+.about__career dt:first-child {
+  margin-top: 0;
+}
+
+.about__career dd {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+/* ===================================
+   Works Section
+   =================================== */
+.works__grid {
+  display: grid;
+  gap: var(--space-2xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .works__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .works__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.work-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-secondary);
+  transition: all 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary-light);
+}
+
+.work-card__link {
+  display: block;
+  color: inherit;
+}
+
+.work-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.work-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover .work-card__image img {
+  transform: scale(1.05);
+}
+
+.work-card__content {
+  padding: var(--space-xl);
+}
+
+.work-card__title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+}
+
+.work-card__category {
+  font-family: var(--font-en);
+  font-size: var(--text-xs);
+  color: var(--color-text-lighter);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.work-card__description {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.work-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.work-card__tags li {
+  font-family: var(--font-en);
+  font-size: var(--text-xs);
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+/* ===================================
+   Service Section
+   =================================== */
+.service__items {
+  display: grid;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-4xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .service__items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service__item {
+  background-color: var(--color-white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-secondary);
+}
+
+.service__item h3 {
+  font-family: var(--font-en);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+}
+
+.service__item ul {
+  list-style: none;
+}
+
+.service__item li {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.service__item li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.service__item li:last-child {
+  margin-bottom: 0;
+}
+
+/* 制作の流れ */
+.service__flow {
+  max-width: 800px;
+  margin: 0 auto var(--space-4xl);
+}
+
+.service__flow h3 {
+  font-family: var(--font-en);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.service__flow ol {
+  list-style: none;
+  counter-reset: step-counter;
+}
+
+.service__flow li {
+  background-color: var(--color-white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-secondary);
+  margin-bottom: var(--space-lg);
+  position: relative;
+  padding-left: 5rem;
+}
+
+.service__flow li:last-child {
+  margin-bottom: 0;
+}
+
+.service__flow li span {
+  position: absolute;
+  left: var(--space-xl);
+  top: var(--space-xl);
+  font-family: var(--font-en);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.service__flow h4 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+}
+
+.service__flow p {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+}
+
+/* 料金目安 */
+.service__price {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-secondary);
+}
+
+.service__price h3 {
+  font-family: var(--font-en);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.service__price-note {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-lighter);
+  margin-bottom: var(--space-xl);
+}
+
+.service__price dl {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.service__price dt {
+  font-weight: 600;
+  color: var(--color-text);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.service__price dd {
+  font-family: var(--font-en);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+/* ===================================
+   Contact Section
+   =================================== */
+.contact__form {
+  max-width: 600px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.form__group {
+  margin-bottom: var(--space-xl);
+}
+
+.form__group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+}
+
+.required {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  margin-left: var(--space-xs);
+  font-weight: 600;
+}
+
+.form__group input,
+.form__group textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-base);
+  transition: all 0.3s ease;
+}
+
+.form__group input:focus,
+.form__group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(74, 155, 155, 0.1);
+}
+
+.form__group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form__submit {
+  text-align: center;
+}
+
+.contact__links {
+  text-align: center;
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-secondary);
+}
+
+.contact__links a {
+  font-family: var(--font-en);
+  font-weight: 500;
+  display: inline-block;
+  margin: 0 var(--space-md);
+  transition: all 0.3s ease;
+}
+
+.contact__links a:hover {
+  transform: translateY(-2px);
+}
